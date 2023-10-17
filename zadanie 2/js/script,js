@@ -1,0 +1,22 @@
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+if (ctx) {
+    function drawRandomSquare() {
+        const size_x = Math.random() * 100; // Размер штуки х
+        const size_y = Math.random() * 100; // Размер штуки у
+        const x = Math.random() * (canvas.width - size_x);
+        const y = Math.random() * (canvas.height - size_y);
+        
+        ctx.fillStyle = 'rgb('+
+        Math.floor(Math.random()*256)+','+
+        Math.floor(Math.random()*256)+','+
+        Math.floor(Math.random()*256)+')'; // Цвет штуки
+        ctx.fillRect(x, y, size_x, size_y);
+    }
+
+
+    for (let i = 0; i<= 200; i++ ) {
+        drawRandomSquare()
+    }
+}
